@@ -4,23 +4,23 @@
 //OBTENIDO DE https://www.geeksforgeeks.org/hardware-synchronization-algorithms-unlock-and-lock-test-and-set-swap/
 
 
-// Shared variable lock initialized to false 
-// and individual key initialized to false;
+// Variable key inicializada a falsa
+// Variable lock inicializada a falsa
 
 boolean lock;
 Individual key;
 
-void swap(boolean &a, boolean &b){
-    boolean temp = a;
+void swap(boolean &a, boolean &b){ //Función de Intercambio, se utiliza despues para intercambiar lock y key
+    boolean temp = a; 
     a = b;
     b = temp;
 }
 
 while (1){
-    key = true;
+    key = true; //Se inicializa key a true
     while(key)
-         swap(lock,key);
+         swap(lock,key);//Intercambio para poner lock a true y permitir la entrada al proceso y denegar la entrada al resto mientras este esta en la seccion critica
     critical section
-    lock = false;
+    lock = false; //Lock a false para permitir de nuevo la entrada al resto de procesos de forma individual.
     remainder section
 } 
