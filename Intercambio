@@ -1,3 +1,9 @@
+
+//EJEMPLO TRABAJO SOLUCIONES HARDWARE EXCLUSIÓN MUTUA
+//ALEJANDRO GÓMEZ CASTELLANOS
+//OBTENIDO DE https://h-educate.in/hardware-solution-to-mutual-exclusion/
+
+
 Void exchange(int register, int memory)
 {
   int temp;
