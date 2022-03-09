@@ -1,3 +1,7 @@
+//EJEMPLO TRABAJO SOLUCIONES HARDWARE EXCLUSIÓN MUTUA
+//ALEJANDRO GÓMEZ CASTELLANOS
+//OBTENIDO DE https://www.geeksforgeeks.org/hardware-synchronization-algorithms-unlock-and-lock-test-and-set-swap/
+
 //Shared variable lock initialized to false
 boolean lock;
 
