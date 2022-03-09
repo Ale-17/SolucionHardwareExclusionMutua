@@ -14,6 +14,6 @@ boolean TestAndSet (boolean &target){
 while(1){
     while (TestAndSet(lock));// cuando el proceso tenga lock a false, sale del bucle y entra en la sección critica, y pone el valor de lock a false para impedir la entrada al resto.
     critical section
-    lock = false; //devuelve 
+    lock = false; //devuelve la variable lock a false, para que el resto de procesos puedan entrar en su sección critica de uno en uno
     remainder section
 }
