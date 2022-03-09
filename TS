@@ -1,10 +1,15 @@
-boolean Test and Set (boolean locked)
-{
-if(locked)
-  return true:
-else
-{
-  locked = true;
-  return false;
-  }
+//Shared variable lock initialized to false
+boolean lock;
+
+boolean TestAndSet (boolean &target){
+    boolean rv = target;
+    target = true;
+    return rv;
+}
+
+while(1){
+    while (TestAndSet(lock));
+    critical section
+    lock = false;
+    remainder section
 }
