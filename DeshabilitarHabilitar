@@ -3,8 +3,8 @@
 //ALEJANDRO GÓMEZ CASTELLANOS
 //OBTENIDO DE https://www.geeksforgeeks.org/hardware-synchronization-algorithms-unlock-and-lock-test-and-set-swap/
 
-// Shared variable lock initialized to false 
-// and individual key initialized to false
+// La variable lock se Inicializa a falso
+// La variable key se Inicializa a falso
 
 boolean lock;
 Individual key;
@@ -12,15 +12,15 @@ Individual waiting[i];
 
 while(1){
     waiting[i] = true;
-    key = true;
+    key = true; //Se establece key a true
     while(waiting[i] && key)
-        key = TestAndSet(lock);
+        key = TestAndSet(lock); //se intercambia el valor de key con el de lock, de tal forma que el proceso entre en la sección critica y que el resto hasta que este finalice no tengan acceso al estar en el bucle y no cumplir las condiciones.
     critical section
     j = (i+1) % n;
     while(j != i && !waiting[j])
          j = (j+1) % n;
     if(j == i)
-         lock = false;
+         lock = false; //se devuelve la variable lock a false para permitir la entrada al resto de procesos que estaban esperando en el bucle de uno en uno.
     else
          waiting[j] = false;
     remainder section
