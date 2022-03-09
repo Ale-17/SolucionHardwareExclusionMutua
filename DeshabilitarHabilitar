@@ -11,7 +11,7 @@ Individual key;
 Individual waiting[i];
 
 while(1){
-    waiting[i] = true;
+    waiting[i] = true;//variable para ver si esta en espera
     key = true; //Se establece key a true
     while(waiting[i] && key)
         key = TestAndSet(lock); //se intercambia el valor de key con el de lock, de tal forma que el proceso entre en la sección critica y que el resto hasta que este finalice no tengan acceso al estar en el bucle y no cumplir las condiciones.
