@@ -4,10 +4,13 @@
 //OBTENIDO DE https://h-educate.in/hardware-solution-to-mutual-exclusion/
 
 
-Void exchange(int register, int memory)
+Void exchange(int register, int memory) //variables registro y memoria, 
 {
-  int temp;
-  temp = memory;
-  memory = register;
-  register = temp;
+  int temp; //variable auxiliar para el intercambio
+  temp = memory;//INTERCAMBIO
+  memory = register;//INTERCAMBIO
+  register = temp;//INTERCAMBIO
+  
+  //Una vez finalizado el intercambio de las variables, al ejecutar el proceso, se bloqueará el acceso de cualquier otro proceso que intente acceder
+  // de forma referenciada al misma espacio de memoria del que se ha procedido al intercambio.
 }
