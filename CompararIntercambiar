@@ -1,7 +1,20 @@
-boolean void swap (boolean a, boolean b)
-{
-  boolean temp;
-  temp = b;
-  b= a; 
-  a = temp;
+// Shared variable lock initialized to false 
+// and individual key initialized to false;
+
+boolean lock;
+Individual key;
+
+void swap(boolean &a, boolean &b){
+    boolean temp = a;
+    a = b;
+    b = temp;
 }
+
+while (1){
+    key = true;
+    while(key)
+         swap(lock,key);
+    critical section
+    lock = false;
+    remainder section
+} 
