@@ -1,0 +1,10 @@
+boolean Test and Set (boolean locked)
+{
+if(locked)
+  return true:
+else
+{
+  locked = true;
+  return false;
+  }
+}
