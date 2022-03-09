@@ -1,0 +1,7 @@
+boolean void swap (boolean a, boolean b)
+{
+  boolean temp;
+  temp = b;
+  b= a; 
+  a = temp;
+}
