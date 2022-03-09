@@ -2,7 +2,7 @@
 //ALEJANDRO GÓMEZ CASTELLANOS
 //OBTENIDO DE https://www.geeksforgeeks.org/hardware-synchronization-algorithms-unlock-and-lock-test-and-set-swap/
 
-//Shared variable lock initialized to false
+//Se inicializa la variable lock a false
 boolean lock;
 
 boolean TestAndSet (boolean &target){
@@ -12,8 +12,8 @@ boolean TestAndSet (boolean &target){
 }
 
 while(1){
-    while (TestAndSet(lock));
+    while (TestAndSet(lock));// cuando el proceso tenga lock a false, sale del bucle y entra en la sección critica, y pone el valor de lock a false para impedir la entrada al resto.
     critical section
-    lock = false;
+    lock = false; //devuelve 
     remainder section
 }
