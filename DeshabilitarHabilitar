@@ -1,0 +1,22 @@
+// Shared variable lock initialized to false 
+// and individual key initialized to false
+
+boolean lock;
+Individual key;
+Individual waiting[i];
+
+while(1){
+    waiting[i] = true;
+    key = true;
+    while(waiting[i] && key)
+        key = TestAndSet(lock);
+    critical section
+    j = (i+1) % n;
+    while(j != i && !waiting[j])
+         j = (j+1) % n;
+    if(j == i)
+         lock = false;
+    else
+         waiting[j] = false;
+    remainder section
+} 
