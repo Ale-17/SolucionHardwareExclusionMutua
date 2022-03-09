@@ -5,7 +5,7 @@
 //Se inicializa la variable lock a false
 boolean lock;
 
-boolean TestAndSet (boolean &target){
+boolean TestAndSet (boolean &target){ //Funcion que se usará para pasar la variable lock a true
     boolean rv = target;
     target = true;
     return rv;
